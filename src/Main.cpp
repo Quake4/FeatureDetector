@@ -40,6 +40,7 @@ int main(){
 	WriteFeature(features.HW_SHA, "SHA", has);
 	WriteFeature(features.HW_AVX && features.OS_AVX, "AVX", has);
 	WriteFeature(features.HW_AVX2 && features.OS_AVX, "AVX2", has);
+	WriteFeature(features.HW_VAES && features.OS_AVX, "VAES", has);
 	WriteFeature(features.HW_AVX512_F && features.OS_AVX512, "AVX512", has);
 	cout << endl;
 }
