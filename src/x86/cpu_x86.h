@@ -71,6 +71,8 @@ struct cpu_x86{
     bool HW_AVX512_IFMA;
     bool HW_AVX512_VBMI;
 
+	bool HW_VAES;
+
 public:
     cpu_x86();
     void detect_host();

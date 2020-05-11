@@ -151,6 +151,8 @@ void cpu_x86::detect_host(){
         HW_AVX512_DQ    = (info[1] & ((int)1 << 17)) != 0;
         HW_AVX512_IFMA  = (info[1] & ((int)1 << 21)) != 0;
         HW_AVX512_VBMI  = (info[2] & ((int)1 <<  1)) != 0;
+
+		HW_VAES         = (info[2] & ((int)1 <<  9)) != 0;
     }
     if (nExIds >= 0x80000001){
         cpuid(info, 0x80000001);
@@ -205,6 +207,7 @@ void cpu_x86::print() const{
     print("    FMA3        = ", HW_FMA3);
     print("    FMA4        = ", HW_FMA4);
     print("    AVX2        = ", HW_AVX2);
+	print("    VAES        = ", HW_VAES);
     cout << endl;
 
     cout << "SIMD: 512-bit" << endl;
